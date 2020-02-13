@@ -1,0 +1,55 @@
+<!-- Menuarea starts -->
+<div class="menuarea">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 col-lg-2 logo">
+        <a class="sidebar-icon" href="javascript:;"
+          ><img alt="" src="./assets/images/sidebar_menu.png"
+        /></a>
+        <a href="javascript:;" (click)="_gotoPath('/')" class="logo_icon"
+          ><img alt="" src="./assets/images/logo.png"
+        /></a>
+      </div>
+      <div class="col-md-10 col-lg-10 right_menu">
+        <nav class="navbar navbar-inverse">
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle"
+              data-toggle="collapse"
+              data-target="#myNavbar"
+            >
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li *ngFor="let tree of treeData">
+                <a (click)="goToCms($event, tree.path)">{{ tree.main_name }}</a>
+                <ul class="first_submenu" *ngIf="tree.child.length > 0">
+                  <li *ngFor="let primary of tree.child">
+                    <a (click)="goToCms($event, primary.path)">{{
+                      primary.primary_menu
+                    }}</a>
+                    <ul
+                      class="second_submenu"
+                      *ngIf="primary.children.length > 0"
+                    >
+                      <li *ngFor="let secondary of primary.children">
+                        <a (click)="goToCms($event, secondary.path)">{{
+                          secondary.secondary_menu
+                        }}</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

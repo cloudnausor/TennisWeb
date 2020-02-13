@@ -1,0 +1,234 @@
+<app-header></app-header>
+<app-top-menu></app-top-menu>
+
+<div class="innerbanner">
+  <img src="../../assets/images/coach_banner.jpg" alt="Los Angeles" />
+  <div class="inner_carousel">
+    <h3>oh my event</h3>
+  </div>
+</div>
+
+<div class="container">
+  <div class="des_coach_abt">
+    <div class="col-md-8 col-sm-8 col-xs-12">
+      <div class="des_coach_abt_sec">
+        <h1 class="des_coach_abt_heading">{{ event_detail.Eventname }}</h1>
+        <h4>
+          <i class="fa fa-map-marker" style="font-size: 18px!important;"></i>
+          {{ event_detail.Location }}
+        </h4>
+        <p class="des_price_text">€{{ event_detail.Price }}</p>
+      </div>
+      <div class="clearfix"></div>
+      <p class="des_coach_abt_para1">{{ event_detail.Description }}</p>
+
+      <div class="des_detail_sec">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="des_row1">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <p class="des_icon_class">
+                <img src="../../assets/images/detail_icon1.png" /> Noté 5/5 par
+                ses élèves
+              </p>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <p class="des_icon_class" id="payment">
+                <img src="../../assets/images/detail_icon2.png" />{{ this.str }}
+              </p>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <a
+                *ngIf="coach_detail.ResumeName === 'undefined'"
+                id="resume"
+                class="des_icon_class"
+                ><img src="../../assets/images/detail_icon3.png" /> Curriculum
+                vitae
+              </a>
+              <a
+                *ngIf="coach_detail.ResumeName !== 'undefined'"
+                id="resume"
+                download="{{ coach_detail.ResumeName }}"
+                (click)="download()"
+                href="#"
+                class="des_icon_class"
+                ><img src="../../assets/images/detail_icon3.png" /> Curriculum
+                vitae
+              </a>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="des_row2">
+            <div class="col-md-8 col-sm-4 col-xs-12">
+              <p class="des_icon_class" id="transport">
+                <img src="../../assets/images/detail_icon4.png" />
+                {{ coach_detail.Coach_transport }}
+              </p>
+            </div>
+            <!-- <div class="col-md-4 col-sm-4 col-xs-12">
+              <p class="des_icon_class">
+                <img src="../../assets/images/detail_icon5.png" /> Coach
+                connecté
+              </p>
+            </div> -->
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <p class="des_map_content">
+        Intervention géographique :
+        <select class="select_drop_custom">
+          <option>Liste des villes</option>
+          <option [ngValue]="city.id" *ngFor="let city of selectedCity">
+            {{ city.Libelle_acheminement }}</option
+          >
+        </select>
+      </p>
+      <div class="clearfix"></div>
+      <div class="des_map">
+        <div class="map-container">
+          <div class="map-frame">
+            <a
+              href="https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route={{
+                curentlat
+              }}%2C{{ curentlang }}%3B{{ lat }}%2C{{ lang }}"
+              target="_blank"
+            >
+              <div id="map"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="col-md-12 col-sm-12 col-xs-12" align="left;">
+        <h4 class="des_contents_cdetail_title">Expérience de Lena</h4>
+        <p
+          class="des_contents_cdetail"
+          id="eventdetails"
+          [innerHTML]="event_detail.Eventdetails"
+        ></p>
+      </div>
+      <div class="text-center">
+        <button
+          class="btn btn-primary des_event_btn"
+          id="btnbooking"
+          (click)="reserveevent()"
+          style="margin-top: 15px;"
+        >
+          Reserve maintenant
+        </button>
+        <br /><br />
+        <div
+          *ngIf="alertMsg.show"
+          class="alert {{ alertMsg.type }} alert-dismissible text-center"
+        >
+          <button
+            type="button"
+            (click)="_closeAlertMessage($event)"
+            class="close"
+          >
+            <span>&times;</span>
+          </button>
+          {{ alertMsg.msg }}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-sm-4 col-xs-12" align="center">
+      <img
+        src="{{ coach_detail.Coach_Image }}"
+        #img
+        (error)="
+          img.src =
+            'https://www.voanews.com/themes/custom/voa/images/Author__Placeholder.png'
+        "
+        class="img-responsive center-block"
+      />
+      <br />
+      <b style="margin-top: 10px;font-size:20px;"
+        >{{ coach_detail.Coach_Fname }} {{ coach_detail.Coach_Lname }}</b
+      >
+      <br />
+      <img src="../../assets/images/fav_logo.png" />
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="des_fav_content"
+        >Ajouter à mes coachs favoris</span
+      >
+      <div class="des_social_icons_footer1">
+        <ul>
+          <li>
+            <a
+              class="twitter"
+              target="_blank"
+              href="{{ coach_detail.TwitterURL }}"
+              ><i class="fa fa-twitter"></i
+            ></a>
+          </li>
+          <!-- <li><a class="linked" target="_blank" href={{coach_detail.TwitterURL}}><i class="fa fa-linkedin"></i></a></li> -->
+          <li>
+            <a
+              class="facebook"
+              target="_blank"
+              href="{{ coach_detail.FacebookURL }}"
+              ><i class="fa fa-facebook-f"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              class="insta"
+              target="_blank"
+              href="{{ coach_detail.InstagramURL }}"
+              ><i class="fa fa-instagram"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <p class="des_right_content">Les 22 avis des élèves de Lena</p>
+      <div class="star-rating">
+        <ul class="list-inline">
+          <li class="list-inline-item"><i class="fa fa-star"></i></li>
+          <li class="list-inline-item"><i class="fa fa-star"></i></li>
+          <li class="list-inline-item"><i class="fa fa-star"></i></li>
+          <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+          <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+        </ul>
+      </div>
+
+      <div class="chip">
+        <img
+          src="../../assets/images/coach_detail_right_mini.png"
+          alt="no file"
+        />
+        <span
+          >Lorem Ipsum is simply dummy text of the printing & typesetting
+          industry.
+        </span>
+      </div>
+
+      <div class="chip1">
+        <img
+          src="../../assets/images/coach_detail_right_mini.png"
+          alt="no file"
+        />
+        <span
+          >Lorem Ipsum is simply dummy text of the printing & typesetting
+          industry.
+        </span>
+      </div>
+
+      <div class="chip">
+        <img
+          src="../../assets/images/coach_detail_right_mini.png"
+          alt="no file"
+        />
+        <span
+          >Lorem Ipsum is simply dummy text of the printing & typesetting
+          industry.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+
+<app-footer></app-footer>

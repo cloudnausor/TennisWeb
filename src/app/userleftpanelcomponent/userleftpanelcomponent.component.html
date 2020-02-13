@@ -1,0 +1,24 @@
+    <div class="sidebar" data-color="purple" data-background-color="white">
+            <div class="logo">
+            <a href="#" class="simple-text logo-normal">
+            <img src="../../assets/images/admin_logo.png" alt="">
+            </a>
+            </div>
+            <div class="sidebar-wrapper">
+            
+            <div class="user_profsm">
+            <img src="{{image}}" alt="{{this.username}}" class="user_smicon">
+            <span>{{this.username}}</span>
+            </div>
+            
+            {{ this.url }}
+              <ul class="nav mynav">
+                    <li *ngFor="let l of leftPanel(); let i = index" class="nav-item" [ngClass]="(l.path ===this.router.url) ? 'active': null">
+                            <a (click)="navActiveIndex = i;" routerLink="{{l.path}}" class="nav-link" href="javascript:;">
+                                <i [ngClass]="l.iclass"></i>
+                                <p [ngClass]="(l.style) ? 'nav-sub-title': null" [innerHTML]="l.title"></p>
+                            </a>
+                        </li>
+              </ul>
+            </div>
+          </div>

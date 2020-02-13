@@ -1,0 +1,229 @@
+<app-header></app-header>
+<app-top-menu></app-top-menu>
+
+<!-- Banner starts -->
+<div class="innerbanner">
+  <img src = "../assets/images1/banner.jpeg"  alt="Los Angeles">
+  <div class="inner_carousel">
+    <h3>Oh My Event</h3>
+  </div>
+</div>
+
+<div class="banner">
+  <div class="search_area">
+      <div class="banner_container">
+          <h3>Réservez un cours avec un event</h3>
+          <div class="row">
+                  <div class="col-xs-12 col-sm-4 col-lg-2">
+                          
+                      </div>
+              <div class="col-xs-12 col-sm-4 col-lg-4">
+                  <div class="form-group">
+                      <div class="addon-lg">
+                          <input class="form-control" id="" maxlength="6" placeholder="Code Postal"
+                              [(ngModel)]="Ville" type="text">
+                          <label><img src="./assets/images/ville_icon.png"></label>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-lg-4 text-left">
+                  <button (click)="searchEvent()" class="btn black_btn">  Recherche</button>
+              </div>
+              <div class="clearfix"></div>
+          </div>
+      </div>
+  </div>
+  <!-- Search area ends -->
+</div>
+<!-- Banner ends --> 
+
+<!--------------------------------------------------Text Area--------------------------------------------------------------------------->
+<div class="lexique_content haspadd" >
+  <div class="container">
+    <div class="row">
+      <div class="lexique">
+        <div class="page_title_div col-xs-12">
+          <h1 class="page_title">Ohmytennis : Offre event tennis </h1>
+          <img src="./assets/images/title_border.png" alt="title_border" />
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="wrapper1 center-block">
+            <div
+              class="panel-group"
+              id="accordion"
+              role="tablist"
+              aria-multiselectable="true"
+            >
+              <div class="panel panel-default">
+                <div class="panel-heading active" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a
+                      role="button"
+                      data-toggle="collapse"
+                      data-parent="#accordion"
+                      href="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                    Qu’est ce qu’un stage de tennis ? 
+                    </a>
+                  </h4>
+                </div>
+
+                <div
+                  id="collapseOne"
+                  class="panel-collapse collapse in"
+                  role="tabpanel"
+                  aria-labelledby="headingOne"
+                >
+                  <div class="panel-body">
+                    <p>
+                      Ce sont des cours de tennis collectifs organisés par un prof sur une courte période hors vacances scolaires. Cela peut constituer un véritable test pour les personnes  qui veulent découvrir le tennis et pourquoi pas par la suite s’engager à l’année ensuite en club (engagement plus ferme).<br>
+                     <b>Lien contextualisé :</b> Découvrez également notre offre concernant les cours particuliers de tennis
+                    </p> 
+                    <br>
+                    <p>
+                      <b>
+                        Quel est le but d’y participer à un stage intensif de tennis ?
+                      </b>
+                      
+                        Si vous souhaitez jouer au tennis,  cela peut être une façon de pratiquer intensivement pour se remettre à niveau ou pour renforcer un point faible comme le revers . Vous vous rendrez  tous les jours sur les terrains  de tennis afin de progresser rapidement pendant cette courte période.
+                       <br>
+                        <b> Lien contextualisé :</b> Comment préparer son premier cours de tennis 
+                    </p>
+                    <br>
+                    <p>
+                      <b>
+                        Quelle peut être la durée, les horaires des stages de tennis ?
+                      </b>
+                      En général la durée des stages de tennis est d’environ une semaine avec des horaires en journée pour les enfants (demi-journée ou journée entière) et pour les adultes des horaires plutôt le soir. Certains stages de tennis proposent également de l’hébergement dans leur formules si ils ont la possibilité de vous accueillir.
+                       
+                       <br>
+                        <b> Lien contextualisé :</b>  Quel matériel de tennis utiliser pour jouer au tennis 
+                    </p>
+                    <br>
+                    <p>
+                      <b>
+                        Pourquoi participer aux stages partenaires de Ohmytennis ?
+                      </b>
+                      Les organisateurs de stages de tennis respectent la charte d’engagement du site Ohmytennis. Tous les professeurs de tennis responsables encadrants sont des diplômé d’Etat afin d’assurer une qualité d’enseignement. Vous avez également la possibilité de participer à de stages organisés à l’étranger
+                      <br>
+                    </p> 
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <h4 class="panel-title">
+                    <a
+                      class="collapsed"
+                      role="button"
+                      data-toggle="collapse"
+                      data-parent="#accordion"
+                      href="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      
+                    OFFRE DE TEAM BUILDING
+
+                    </a>
+                  </h4>
+                </div>
+                <div
+                  id="collapseTwo"
+                  class="panel-collapse collapse"
+                  role="tabpanel"
+                  aria-labelledby="headingTwo"
+                >
+                  <div class="panel-body">
+                    <p>
+                      <b>Qu’est ce que le team building au tennis ?</b> 
+                      Le team building est né dans les années 80 aux Etats Unis et permet de renforcer les liens d’une équipe qui travaille aus sein d’une entreprise. (traduction = renforcement d’équipe). Rien de mieux que de partager cela sur un court de tennis.
+                    </p>
+                    <br>
+                    <p>
+                      <b>Pourquoi proposer du team building à votre équipe sur le thème du tennis ?</b> 
+        
+                      Si vous souhaitez partager des moments forts avec vos collègues, le terrain de tennis peut s’avérer être un lieu d’échange et de dépassement lorsque vous jouer en double par exemple. En effet la communication entre membres d’une même équipe est primordiale sur le terrain pour aller vers la victoire. Vous voulez insuffler du changement, de la motivation, de la productivité au sein de votre entreprise , n’hésitez pas à nous contacter pour un devis sur mesure en fonction de vos envies.
+                    </p>
+                    <br>
+                    <p>
+                      <b>
+                        Quelle peut être la durée, les horaires des animations de tennis ?
+                      </b>
+                     Une animation de tennis se déroule en général durant une demi-journée voire une         
+                     journée entière pour permettre aux participants de s’organiser ou de prendre leur 
+                     temps pour jouer sur événement hors du commun pour bien profiter du moment. La
+                     convivialité est de mise afin que les passionnés puissent partager un vrai moment 
+                     d’échange sur le court de tennis.  
+                    </p>
+
+
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                  <h4 class="panel-title">
+                    <a
+                      class="collapsed"
+                      role="button"
+                      data-toggle="collapse"
+                      data-parent="#accordion"
+                      href="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      
+                    OFFRE ANIMATION
+
+                    </a>
+                  </h4>
+                </div>
+                <div
+                  id="collapseThree"
+                  class="panel-collapse collapse"
+                  role="tabpanel"
+                  aria-labelledby="headingThree"
+                >
+                  <div class="panel-body">
+                    <p>
+                      <b> Qu’est ce qu’une animation de tennis ?</b> 
+                      Une animation de tennis est un moment privilégié organisé par un club de tennis ou un prof avec un ou plusieurs thèmes précis. Il est possible de voir organiser des sessions avec des thèmes précis sur la technique ou encore des séances avec support vidéos. Mais vous pouvez aussi assister à des événements avec un anniversaire pour les enfants , le radar tennis pour mesurer votre vitesse au service , le terrain de tennis gonflable , le mur digital pour tester votre réactivité ou encore le tennis réalité virtuelle pour jouer comme dans un jeu vidéo.
+                    </p>
+                    <br>
+                    <p>
+                      <b>Pourquoi proposer du team building à votre équipe sur le thème du tennis ?</b> 
+        
+                      Si vous souhaitez partager des moments forts avec vos collègues, le terrain de tennis peut s’avérer être un lieu d’échange et de dépassement lorsque vous jouer en double par exemple. En effet la communication entre membres d’une même équipe est primordiale sur le terrain pour aller vers la victoire. Vous voulez insuffler du changement, de la motivation, de la productivité au sein de votre entreprise , n’hésitez pas à nous contacter pour un devis sur mesure en fonction de vos envies.
+                    </p>
+                    <br>
+                    <p>
+                      <b>
+                        Pourquoi assister à une animation de tennis ?
+                      </b>
+                      <br>
+                       C’est une approche plus sympa pour jouer au tennis avec plaisir tout en gardant le côté pédagogique. On ne manque jamais une occasion de progresser sur le terrain mais si le côté ludique est présent cela peut réveiller en vous certaines compétences. cela permet de sortir du cours de tennis classique.        
+                    </p>
+                </div>
+              </div>
+            </div>    
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--------------------------------------------------Text Area Ends------------------------------------------->
+<div class="clearfix"></div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,136 @@
+<header>
+  <!-- Header Top area starts -->
+  <div class="header_top">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 social_icons">
+          <ul>
+            <li>
+              <a
+                class="twitter"
+                href="https://twitter.com/Proftenniscom"
+                target="_blank"
+                ><i class="fa fa-twitter"></i
+              ></a>
+            </li>
+            <li>
+              <a class="linked" href="javascript:void();"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                class="facebook"
+                href="https://www.facebook.com/proftennisIDF"
+                target="_blank"
+                ><i class="fa fa-facebook-f"></i
+              ></a>
+            </li>
+            <li>
+              <a class="insta" href="javascript:void();"
+                ><i class="fa fa-instagram"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-9 top_menu">
+          <ul>
+            <ng-container *ngIf="!_getSession()">
+              <li>
+                <a
+                  [ngClass]="
+                    this._activeRoutePath() ===
+                    this._const('PATH.COACH_REGISTER')
+                      ? 'active'
+                      : ''
+                  "
+                  href="javascript:;"
+                  routerLink="{{ '/' + this._const('PATH.COACH_REGISTER') }}"
+                  ><img src="./assets/images/coach_icon.png" />&nbsp;
+                  <span>DEVENIR COACH</span></a
+                >
+              </li>
+              <li>
+                <a
+                  [ngClass]="
+                    this._activeRoutePath() === this._const('PATH.LOGIN')
+                      ? 'active'
+                      : ''
+                  "
+                  href="javascript:;"
+                  routerLink="{{ '/' + this._const('PATH.LOGIN') }}"
+                  ><img src="./assets/images/login_icon.png" />&nbsp;
+                  <span>CONNEXION</span></a
+                >
+              </li>
+              <li>
+                <a
+                  [ngClass]="
+                    this._activeRoutePath() ===
+                    this._const('PATH.USER_REGISTER')
+                      ? 'active'
+                      : ''
+                  "
+                  href="javascript:;"
+                  routerLink="{{ '/' + this._const('PATH.USER_REGISTER') }}"
+                  ><img src="./assets/images/register_icon.png" />&nbsp;
+                  <span>INSCRIVEZ-VOUS</span></a
+                >
+              </li>
+            </ng-container>
+            <ng-container *ngIf="_getSession()">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <img
+                    width="45"
+                    style="border-radius: 50%;margin-right:5px;height: 45px;"
+                    src="{{ image }}"
+                  />
+                  {{ username }}
+                </a>
+                <ul class="dropdown-menu">
+                  <li *ngIf="roleid == 1" style="width: 100%;color: black;">
+                    <a
+                      href="javascript:;"
+                      routerLink="../user/dashboard"
+                      style="color: black;width: 100%;line-height: 40px;text-decoration: none;"
+                      href="#"
+                      >TABLEAUX DE BORD</a
+                    >
+                  </li>
+                  <li *ngIf="roleid == 2" style="width: 100%;color: black;">
+                    <a
+                      href="javascript:;"
+                      routerLink="../coach/dashboard"
+                      style="color: black;width: 100%;line-height: 40px;text-decoration: none;"
+                      href="#"
+                      >TABLEAUX DE BORD</a
+                    >
+                  </li>
+                  <li style="color: black;" class="divider"></li>
+                  <li style="width: 100%;color: black;">
+                    <a
+                      style="color: black;width: 100%;line-height: 40px;text-decoration: none;"
+                      href="javascript:;"
+                      (click)="_logout()"
+                      >Se déconnecter</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <!-- <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" (click)="_logout()"><img
+                                src="./assets/images/register_icon.png">&nbsp; <span class="username">LOGOUT</span></a> -->
+            </ng-container>
+            <li class="search_div">
+              <input class="search_btn" placeholder="Recherche" type="text" /><a
+                href="#"
+                ><i class="fa fa-search"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Header Top area ends -->
+</header>
