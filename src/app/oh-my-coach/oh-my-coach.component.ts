@@ -342,7 +342,7 @@ export class OhMyCoachComponent extends AppComponent implements OnInit {
   }
 
   goToCouchDetail(id) {
-    this.router.navigate(["coach-detail-new"], {
+    this.router.navigate(["ohmycoachdetail"], {
       queryParams: { id }
     });
   }
